@@ -9,7 +9,7 @@ function convertToJson(res) {
 export default class ProductData {
   constructor(category) {
     this.category = category;
-    // Use absolute path instead of relative path for better compatibility with deployment
+    // Path for JSON files in the public directory - Vite serves public files from root
     this.path = `/json/${this.category}.json`;
   }
   getData() {

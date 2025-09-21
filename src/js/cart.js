@@ -15,10 +15,13 @@ function renderCartContents() {
 }
 
 function cartItemTemplate(item, index) {
+  // Fix the image path - remove the ../ prefix and add proper path
+  const imageSrc = item.Image.replace('../', './');
+  
   const newItem = `<li class="cart-card divider">
   <a href="#" class="cart-card__image">
     <img
-      src="${item.Image}"
+      src="${imageSrc}"
       alt="${item.Name}"
     />
   </a>
