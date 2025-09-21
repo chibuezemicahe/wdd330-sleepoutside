@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sleep Outside | Home</title>
+    <title>Search Results | Sleep Outside</title>
     <link rel="stylesheet" href="/css/style.css" />
   </head>
 
@@ -11,7 +11,7 @@
     <header class="divider">
       <div class="logo">
         <img src="/images/noun_Tent_2517.svg" alt="tent image for logo" />
-        <a href="index.html"> Sleep<span class="highlight">Outside</span></a>
+        <a href="../index.html"> Sleep<span class="highlight">Outside</span></a>
       </div>
       <div class="search-container">
         <form class="search-form" id="search-form">
@@ -31,7 +31,7 @@
         </form>
       </div>
       <div class="cart">
-        <a href="cart/index.html">
+        <a href="../cart/index.html">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             <path
               d="M18.9 32.6c1.1 2.4 2.5 3.3 5.4 3.3 1.6 0 3.6-0.3 5.9-0.6 3.2-0.5 6.9-1 11.2-1 2.1 0 4.3 0.1 6.4 0.3 2.1 0.1 4.2 0.3 6.1 0.3 3.2 0 5.2-0.4 5.9-1.2 2.7-2.7 2.8-8.8 2.9-14.6 0.1-6.7 0.2-14.5 4.6-18.7 -0.5 0-1 0-1.6 0 -14.2 0-37.5 0-41.1 0C15.6 6.2 14.9 23.6 18.9 32.6z"
@@ -58,33 +58,59 @@
         </a>
       </div>
     </header>
-    <main class="divider">
-      <div class="hero">
-        <img
-          src="/images/banner-sm.jpg"
-          srcset="images/banner-sm.jpg 500w, images/banner.jpg"
-          alt="image of a high mountain lake"
-        />
-        <div class="hero-content">
-          <h1>Great Outdoor Gear</h1>
-          <p>Find everything you need for your next adventure</p>
+
+    <main class="divider search-main">
+      <div class="search-container-page">
+        <div class="search-header">
+          <h1 id="search-title">Search Results</h1>
+          <div class="search-info">
+            <span id="search-count">0 results</span>
+            <span id="search-query"></span>
+          </div>
         </div>
-        <section class="mission">
-          <p>
-            We are committed to getting you the outdoor gear you need to make your
-            next adventure a success! From tents and sleeping bags, to backpacks
-            and hiking poles, we have all the gear you need.
-          </p>
-        </section>
+
+        <div class="search-filters">
+          <div class="filter-group">
+            <label for="category-filter">Category:</label>
+            <select id="category-filter">
+              <option value="">All Categories</option>
+              <option value="tents">Tents</option>
+              <option value="backpacks">Backpacks</option>
+              <option value="sleeping-bags">Sleeping Bags</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="sort-filter">Sort by:</label>
+            <select id="sort-filter">
+              <option value="relevance">Relevance</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="name">Name A-Z</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="search-results">
+          <ul class="product-list" id="search-results-list">
+            <!-- Search results will be populated here -->
+          </ul>
+        </div>
+
+        <div class="no-results" id="no-results" style="display: none;">
+          <div class="no-results-content">
+            <h2>No products found</h2>
+            <p>Try adjusting your search terms or browse our categories:</p>
+            <div class="category-links">
+              <a href="../product_pages/tents.html" class="category-link">Tents</a>
+              <a href="../product_pages/backpacks.html" class="category-link">Backpacks</a>
+              <a href="../product_pages/sleeping-bags.html" class="category-link">Sleeping Bags</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <section class="products">
-        <h2>Top Products</h2>
-        <ul class="product-list">
-          <!-- Products will be loaded here -->
-        </ul>
-      </section>
     </main>
+
     <footer>&copy;NOT a real business</footer>
-    <script src="/js/main.js" type="module"></script>
+    <script src="/js/search.js" type="module"></script>
   </body>
 </html>
