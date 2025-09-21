@@ -189,10 +189,11 @@ class SearchManager {
   }
   
   createProductCard(product) {
-    // Fix image path
+    // Fix image path for both local and production
     let imageSrc = product.Image || '';
     if (imageSrc) {
-      imageSrc = imageSrc.replace(/^\.\.\//, '/');
+      // Remove the ../ prefix and ensure it starts with /
+      imageSrc = imageSrc.replace(/^\.\.\//, '');
       if (!imageSrc.startsWith('/')) {
         imageSrc = '/' + imageSrc;
       }

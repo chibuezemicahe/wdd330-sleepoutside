@@ -1,3 +1,5 @@
 # Handle client-side routing
 /search/* /search/index.html 200
+# Handle images
+/images/* /images/:splat 200
 /*        /index.html 200
